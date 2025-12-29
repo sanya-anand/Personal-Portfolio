@@ -1,0 +1,914 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000; 
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #fffce0;
+  background-image: url("https://www.transparenttextures.com/patterns/grilled-noise.png");
+  background-repeat: repeat;
+  background-size: auto;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  height: 100vh;
+  position: relative;
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+
+.left-bar {
+  width: 10px;
+  height: 50%;
+  background-color: #f7b733;
+  margin-right: 1rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+}
+
+.text-section {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+.text-section h2 {
+  font-size: 1.5rem;
+  color: #f7b733;
+  margin-bottom: 10px;
+}
+
+.text-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.text-section .name {
+  color: #f7b733;
+  text-shadow: 1px 1px 2px #00000020;
+}
+
+.title {
+  background-color: #f7b733;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.subtitle {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.hero-btn i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.hero-btn:hover {
+  background-color: #f7b733;
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.hero-btn:hover i {
+  transform: translateX(5px);
+}
+
+a.hero-btn {
+  text-decoration: none !important;
+}
+
+.image-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -250px;
+}
+
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fffcea, #fbe6aa);
+  filter: blur(20px);
+  opacity: 0.8;
+  z-index: 0;
+  animation: pulse-ring 5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.circle-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  border: 5px solid #fcbf49;
+  background-color: white;
+}
+
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icons {
+  position: absolute;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  z-index: 2;
+}
+
+.icons i {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 1rem;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icons i:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    height: auto;
+  }
+
+  .left-bar{
+    display: none;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 2rem;
+  }
+
+  .text-section {
+    padding: 0;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+  }
+
+  .text-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .text-section p {
+    max-width: 90%;
+    margin: 0 auto 20px;
+    
+  }
+
+  .circle-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .icons {
+    position: static;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .icons i {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+/* ================= ABOUT SECTION ================= */
+
+.layout {
+  height: calc(100vh - 64px); 
+  background-color: #fffce0;
+  background-image: url("https://www.transparenttextures.com/patterns/grilled-noise.png");
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Container */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* Header */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about-heading {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+
+}
+
+.back-arrow {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #f7b733;
+  cursor: pointer;
+  position: relative;
+  top: -1px;
+  opacity: 0.8;
+
+}
+.back-arrow:hover {
+  transform: translateX(-4px);
+  transition: transform 0.2s ease;
+  opacity: 1;
+
+}
+
+/* Hero Section */
+.about-hero {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 6rem;
+  align-items: center;
+  animation: fadeUp 0.6s ease-out;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+/* Photo */
+
+.about-photo {
+  transform: translateY(-12px);
+}
+
+.about-photo img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #f7b733;
+  display: block;
+  margin-left: 2rem;
+}
+
+/* Text */
+.about-text {
+  max-width: 540px;
+
+}
+
+.intro {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.intro strong {
+  color: #f7b733;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Education + Hobbies aligned with text */
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  max-width: 700px;
+  align-items: start;
+}
+
+/* Tabs */
+.tab.yellow {
+  display: inline-block;
+  background-color: #f7b733;
+  color: black;
+  font-weight: bold;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  width: fit-content;
+}
+
+/* Lists */
+.about-columns .about-list {
+  list-style: none;
+  padding: 0;
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.about-columns .about-list li {
+  line-height: 1.4;
+}
+
+.about-list span {
+  color: #666;
+  font-size: 0.9rem;
+}
+.hobbies .about-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+/* TOP NAVIGATION */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.2rem 2rem;
+}
+
+/* Nav links */
+.top-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  color: #f7b733;
+}
+
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #f7b733;
+  transition: width 0.3s ease;
+}
+
+.top-nav a:hover::after,
+.top-nav a.active::after {
+  width: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .layout{
+    overflow: auto;
+  }
+  .about-header {
+    justify-content: center;
+  }
+
+  .about-hero,
+  .about-columns {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-photo img {
+    margin: 0 auto;
+  }
+
+  .about-columns::before {
+    display: none;
+  }
+    
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .top-nav a {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ================= SKILLS PAGE ================= */
+
+.skills-page {
+  min-height: auto;
+  background-color: #fffce0;
+  background-image: url("https://www.transparenttextures.com/patterns/grilled-noise.png");
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 3rem;
+  align-items: stretch;
+  margin-top: 4rem;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.8rem 2rem;
+  border-radius: 16px;
+  transition:transform 0.25s ease;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow:  0 10px 25px rgba(0,0,0,0.06);;
+}
+.skill-block:hover {
+  transform: translateY(-4px);
+}
+.skill-block:first-child {
+  transform: translateY(-4px);
+  padding-bottom: 2.4rem;
+}
+.skill-block:first-child:hover {
+  transform: translateY(-8px);
+}
+
+.skill-block h4 {
+ font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+}
+.skill-block h4:first-of-type {
+  margin-top: 0;
+}
+.skill-block h4 + .about-list {
+  margin-top: 0.4rem;
+}
+
+.skills-page .about-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.skills-page .about-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.skills-page .about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #f7b733;
+  font-weight: bold;
+}
+
+/* Skills card heading – match project heading */
+.skill-block .tab.yellow {
+  background: none;        
+  padding: 0;
+  border-radius: 0;
+  font-size: 1.3rem;     
+  font-weight: 700;
+  color: #f7b733;
+  margin-bottom: 1rem;
+}
+
+.skill-block:hover .tab.yellow {
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .skills-container {
+    padding-top: 2rem;
+  } 
+}
+
+/* ================= PROJECT ================= */
+
+.projects-page {
+  min-height: auto;
+  background-color: #fffce0;
+  background-image: url("https://www.transparenttextures.com/patterns/grilled-noise.png");
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  color: #f7b733;;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tech {
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-links a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #f7b733;
+  color: #000;
+}
+
+.projects-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.project-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header-text .about-heading {
+  margin-bottom: 0.3rem;   /* space between title & subtitle */
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .page-subtitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 3rem ; 
+  margin: 0;
+  flex: 1;
+}
+.contact-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  overflow-x: hidden;
+}
+
+.contact-left h1 {
+  font-size: 2.5rem;
+  color: #f7b733;
+  margin-bottom: 1rem;
+}
+
+.contact-left p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.info-item i {
+  color: #f7b733;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-links a {
+  background-color: #f7b733;
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #f7b733;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid #555;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f7b733;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+.btn {
+  background-color: #f7b733;
+  color: #000;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px #f7b733;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left h1 {
+    font-size: 2rem;
+  }
+}
+
+/* FOOTER */
+.footer {
+  background-color: #000;
+  color: #ccc;
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  padding-top: 6.6rem;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-name {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.footer-name strong {
+  color: #f7b733;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+  color: #aaa;
+}
+
